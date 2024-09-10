@@ -41,31 +41,31 @@ password:  12345678
 
 ###### Note: Wunderlist application will be running in at most two minutes. If you do not see the `Started Server` log immediately, do not worry about it.
 
-## POSTMAN
+## Postman
 You can download directly download requests from Postman Collection in:
 ```bash
 https://github.com/mkaraa/Wunderlist/blob/main/Wunderlist.postman_collection.json
 ```
 
-## GITHUB
+## Github
 You can clone directly the project from Github Repo below:
 ```bash
 https://github.com/mkaraa/Wunderlist
 ```
 
-## SWAGGER
+## Swagger
 You can see the domain of Wunderlist Application and endpoints in:
 ```bash
 http://127.0.0.1:8081/swagger-ui/index.html
 ```
 
-## ACTUATOR
+## Spring Boot Actuator
 You can check heartbeats and metrics of Wunderlist Application in:
 ```bash
 http://127.0.0.1:8081/actuator
 ```
 
-## Detail
+## Details
 - `Chain of Responsibility` design pattern is applied for validation
 - `Logback-spring.xml` is configured to map all logs
 - `HandlerInterceptor` is used for logging all request 
