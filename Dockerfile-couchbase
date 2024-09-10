@@ -1,0 +1,6 @@
+FROM couchbase:latest
+
+COPY src/main/resources/configure-cluster.sh /opt/couchbase/
+RUN chmod +x /opt/couchbase/configure-cluster.sh
+
+CMD ["/opt/couchbase/configure-cluster.sh"]

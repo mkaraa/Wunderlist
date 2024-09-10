@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: Wunderlist
+  couchbase:
+    connection-string: 127.0.0.1
+    username: mkaraa-prod-user
+    password: 12345678
+    env:
+      timeouts:
+        connect: 120000
+  data:
+    couchbase:
+      bucket-name: he-prod-bucket
+
+app:
+  jwt-config:
+    secret-key: KMFFAJ4I394JGJN42MCX13PPLQW432221231DQSA23A
+    expiration-time: 5900000
+    
+server:
+  port: 8081

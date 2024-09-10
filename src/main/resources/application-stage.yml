@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: Wunderlist
+  couchbase:
+    connection-string: 127.0.0.1
+    username: mkaraa-admin
+    password: 12345678
+    env:
+      timeouts:
+        connect: 120000

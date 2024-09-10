@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: Wunderlist
+  couchbase:
+    connection-string: he_couchbase
+    username: mkaraa-admin
+    password: 12345678
+    env:
+      timeouts:
+        connect: 120000
+  data:
+    couchbase:
+      bucket-name: he-bucket
+
+server:
+  port: 8081
+
+app:
+  jwt-config:
+    secret-key: J46434MRJ432N43248324H1321894214324JN3275HFSJA7324HNJDA36GR
+    expiration-time: 21600000
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+management:
+  health:
+    livenessState:
+      enabled: true
+    readinessState:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: metrics, health, caches, restart

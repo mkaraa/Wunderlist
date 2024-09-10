@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  he_couchbase:
+    container_name: he_couchbase
+    build:
+      context: .
+      dockerfile: Dockerfile-couchbase
+    ports:
+      - 8091:8091
+      - 8093:8093
+      - 8094:8094
+      - 11210:11210
+    volumes:
+      - couchbase:/opt/couchbase/var
+    networks:
+      - db_network
+    restart: always
+    entrypoint: [ "/opt/couchbase/configure-cluster.sh" ]
+
+  wunderlist:
+    container_name: wunderlist
+    image: wunderlist-he
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - he_couchbase
+    ports:
+      - 8081:8081
+    environment:
+      - COUCHBASE_HOST=he_couchbase
+      - COUCHBASE_BUCKET=he-bucket
+      - COUCHBASE_USERNAME=mkaraa-admin
+      - COUCHBASE_BUCKET_PASSWORD=12345678
+      - SPRING_PROFILES_ACTIVE=dev
+    networks:
+      - db_network
+    restart: always
+
+networks:
+  db_network:
+    driver: bridge
+
+volumes:
+  couchbase:
