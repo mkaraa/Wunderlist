@@ -3,7 +3,23 @@
 Hepsiemlak test case for the application.
 
 ## Installation
-Download wunderlist docker-compose file from  [DOWNLOAD_LINK](www.google.com).
+Download Wunderlist Application from DockerHub. Go to the link:
+```bash
+https://hub.docker.com/r/mkaraa/wunderlist-server
+```
+Copy the docker image script to pull
+```bash
+docker pull mkaraa/wunderlist-server
+```
+
+Download Wunderlist Couchbase Database from DockerHub. Go to the link:
+```bash
+https://hub.docker.com/r/mkaraa/wunderlist-couchbase
+```
+Copy the docker image script to pull
+```bash
+docker pull mkaraa/wunderlist-couchbase
+```
 
 ## Usage
 Run the script shown below. This script run Couchbase and Wunderlist Application.
